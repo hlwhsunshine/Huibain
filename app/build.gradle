@@ -9,6 +9,22 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        ndk{
+
+            moduleName "hellolog"
+
+            abiFilters "armeabi"//输出指定的三种abi体系下的so库
+
+        }
+
+        sourceSets.main{
+            jni.srcDirs = []
+
+            jniLibs.srcDir "src/main/libs"
+
+        }
     }
     buildTypes {
         release {
